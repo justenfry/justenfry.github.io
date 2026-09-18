@@ -24,14 +24,93 @@
 
 <h2 style="text-align: center;">Projects</h2>
 <ul>
-   <li><strong>Project 1:</strong> Personal Website - A website showcasing my portfolio and skills.</li>
+   <li><strong>Project 1:</strong> Personal Website - A website showcasing my portfolio and skills.<br> As I make this page I am looking up new
+  and exciting (or at least exciting for me) ways to jazz it up and improve it.</li><br>
+   
    <li><strong>Project 2:</strong> Decision Assistant - For those times when you can't decide what to have for dinner.</li>
-<div> </div>
+<div class="RandomChoicePicker">
+ <h3>Random Choice Picker</h3>
+    
+    <!-- 1. The HTML List -->
+    <ul id="my-list">
+        <li>Pizza 🍕</li>
+        <li>Burgers 🍔</li>
+        <li>Pasta 🍝</li>
+        <li>Tacos 🌮</li>
+        <li>Salad 🥗</li>
+    </ul>
 
-   <li><strong>Project 3:</strong> Paper Rock Scissors Game - After learning conditionals I made the text version.</li>
+    <!-- 2. The Trigger Button -->
+    <button onclick="pickRandom()">Pick a Random Option</button>
+
+    <!-- 3. Where the Result Appears left aligned -->
+    <p id="result" style="text-align: left;"></p>
+
+    <!-- 4. The JavaScript Logic -->
+    <script>
+        function pickRandom() {
+            // Get all 'li' element items inside our list
+            const listItems = document.querySelectorAll('#my-list li');
+            
+            // Generate a random index number based on the length of the list
+            const randomIndex = Math.floor(Math.random() * listItems.length);
+            
+            // Select the item corresponding to the random index number
+            const chosenItem = listItems[randomIndex].innerText;
+            
+            // Display the result on the webpage
+            document.getElementById('result').innerText = "The random choice is: " + chosenItem;
+        }
+    </script>   
+</div>
+
+   <li><strong>Project 3:</strong> Rock Paper Scissors Game - After learning conditionals I made the text version.</li><br>
+
+<div class="RockPaperScissors">
+  <!-- Rock Button -->
+  <button id="Rock" class="choice-btn">✊ Rock</button>
+
+  <!-- Paper Button -->
+  <button id="Paper" class="choice-btn">✋ Paper</button>
+
+  <!-- Scissors Button -->
+  <button id="Scissors" class="choice-btn">✌️ Scissors</button>
+  <li><strong>Result: </strong> <span id="RPSresult"></span></li>
+  <li><strong>Score: </strong> <span id="score">0</span></li>
+  <script>
+    const choices = ["Rock", "Paper", "Scissors"];
+    let score = 0;
+
+    document.querySelectorAll('.choice-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const userChoice = button.id;
+        const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+        let RPSresult = '';
+
+        if (userChoice === computerChoice) {
+          RPSresult = "It's a tie!";
+        } else if (
+          (userChoice === "Rock" && computerChoice === "Scissors") ||
+          (userChoice === "Paper" && computerChoice === "Rock") ||
+          (userChoice === "Scissors" && computerChoice === "Paper")
+        ) {
+          RPSresult = "You win!";
+          score++;
+        } else {
+          RPSresult = "You lose!";
+          /*score--;*/
+        }
+
+        document.getElementById('RPSresult').innerText = `You chose ${userChoice}, Computer chose ${computerChoice}. ${RPSresult}`;
+        document.getElementById('score').innerText = score;
+      });
+    });
+   </script>
+</div>
+
    <li><strong>Project 4:</strong> Embedded Microcontroller - Using a spare projector remote, an adruino uno with an IR sensor I hooked up it  up to 
    my computer. <br>I then wrote a Python program to interpret the signals from the remote and cause a corresponding action within Unity for different 
-   sizes boxes to spawn.</li>
+   sizes boxes to spawn.</li><br>
 <video width="720" height="640" controls>
   <source src="Embedded_MC.mp4" type="video/mp4">
 Your browser does not support the video tag.

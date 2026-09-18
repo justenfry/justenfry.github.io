@@ -1,0 +1,57 @@
+/* Make the background static with subtle shifts in color */
+body {
+    background: linear-gradient(135deg, #83acee, #a8ec4f);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+/* Make the header text look like a neon sign */
+h1 {
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 50px;
+}
+/* Make the h2 text look like handwritten with a slight glow */
+h2 {
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00ffff, 0 0 20px #00ffff, 0 0 25px #00ffff;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 30px;
+}
+/* Increase the size of the p1 text to make it stand out */
+p {
+    font-size: 1.35em;
+    color: #050000;
+    text-align: left;
+    margin-top: 20px;
+}    
+/* increase hyperlink size underline */
+a {
+    font-size: 1.2em;
+    color: #3d0bf3;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+/* make the li elements look like cursive handwriting  */
+li {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1.2em;
+    color: #0f0000;
+    margin-bottom: 10px;
+}
+/* Give the buttons a nice curved edge and centered text */
+button {
+    background-color: #4784f5;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
