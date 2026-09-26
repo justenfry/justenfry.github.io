@@ -1,30 +1,61 @@
 /* Make the background static with subtle shifts in color */
-body {
-    background: linear-gradient(135deg, #83acee, #a8ec4f);
+.header {
+    background:  rgb(1, 1, 247);
     background-size: 400% 400%;
+    border-radius: 15px;
     animation: gradientShift 15s ease infinite;
+    padding: 20px;
+    text-align: center;
+}
+/*Make a background color like back in the early 2000s very see through */
+body {
+    background-image: url("projects.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0.7;
+    z-index: -1; 
+
 }
 /* Make the header text look like a neon sign */
 h1 {
-    color: #fff;
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
+    color: #b8f842;
     font-family: 'Arial', sans-serif;
     font-size: 2.5em;
     text-align: center;
     margin-top: 50px;
+    opacity: 0.8;
 }
 /* Make the h2 text look like handwritten with a slight glow */
 h2 {
-    color: #fff;
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00ffff, 0 0 20px #00ffff, 0 0 25px #00ffff;
-    font-family: 'Brush Script MT', cursive;
+    color: #f77621;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     font-size: 2em;
     text-align: center;
     margin-top: 30px;
+    opacity: 0.8;
+}
+.project1 {
+    background-color: #d9fc3d;
+    border-radius: 15px;
+    border: 1px solid #160101e7;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 2000px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.randomChoice {
+    background-color: #99fc3d;
+    border-radius: 15px;
+    border: 1px solid #160101e7;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 2000px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 /* Increase the size of the p1 text to make it stand out */
 p {
-    font-size: 1.35em;
+    font-size: 1.15em;
     color: #050000;
     text-align: left;
     margin-top: 20px;
@@ -38,20 +69,37 @@ a {
 }
 /* make the li elements look like cursive handwriting  */
 li {
-    font-family: 'Brush Script MT', cursive;
-    font-size: 1.2em;
+    font-family: 'times new roman', cursive, sans-serif;
+    font-size: 1.1em;
     color: #0f0000;
     margin-bottom: 10px;
 }
 /* Give the buttons a nice curved edge and centered text */
-button {
-    background-color: #4784f5;
+.choice-btn {
+    background-color: #0e61fa;
     color: #fff;
     border: none;
     border-radius: 25px;
     padding: 10px 20px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
     text-align: center;
+}
+.choice-btn:hover {
+    background-color: #0ce5ec;
+}
+.random_button {
+    background-color: rgb(6, 104, 47);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-align: center;
+}
+.random_button:hover {
+    opacity: 0.5;
 }
