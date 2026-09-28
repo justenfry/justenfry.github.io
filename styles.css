@@ -1,105 +1,159 @@
 /* Make the background static with subtle shifts in color */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .header {
-    background:  rgb(1, 1, 247);
+    
     background-size: 400% 400%;
     border-radius: 15px;
     animation: gradientShift 15s ease infinite;
     padding: 20px;
     text-align: center;
 }
+/* Add a sidebar for page links */
+.navBar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 125px;
+    height: 100%;
+    background-color: #ffaf37;
+    padding-top: 20px;
+    padding-left: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 2em;
+    z-index: 10;
+}
 /*Make a background color like back in the early 2000s very see through */
-body {
-    background-image: url("projects.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-color: rgba(0, 0, 0, 0.9);
-    opacity: 0.7;
-    z-index: -1; 
+main {
+    align-items: center;
+    background-size: 100vh 100vw;
+    padding-left: 120px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+section {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    margin: 20px auto;
+    max-width: 2000px;
+    padding-left: 20px;
+    opacity: 0;
+    z-index: 1;
+}
+section:target {
+    opacity: 1;
+    animation: 2s fadeIn forwards .4s ease-in-out;
+    z-index: 5;
+}
+/*
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}*/
+
+#user{
+    body {
+        top: 0;
+        left: 100px;
+        background-image: url("projects.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: rgba(0, 0, 0, 0.9);
+        opacity: 0.7;
+
+    }
+
+    h1 {
+        color: #b8f842;
+        font-family: 'Arial', sans-serif;
+        font-size: 2.5em;
+        text-align: center;
+        margin-top: 50px;
+        opacity: 0.8;
+    }
+
+    h2 {
+        color: #f77621;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        font-size: 2em;
+        text-align: center;
+        margin-top: 30px;
+        opacity: 0.8;
+    }
+    .project1 {
+        background-color: #d9fc3d;
+        border-radius: 15px;
+        border: 1px solid #160101e7;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 2000px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .randomChoice {
+        background-color: #99fc3d;
+        border-radius: 15px;
+        border: 1px solid #160101e7;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 2000px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+        font-size: 1.15em;
+        color: #050000;
+        text-align: left;
+        margin-top: 20px;
+    }    
+
+    a {
+        font-size: 1.2em;
+        color: #3d0bf3;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
 
 }
-/* Make the header text look like a neon sign */
-h1 {
-    color: #b8f842;
-    font-family: 'Arial', sans-serif;
-    font-size: 2.5em;
-    text-align: center;
-    margin-top: 50px;
-    opacity: 0.8;
+#work {
+    body {
+        top: 0;
+        left: 100px;
+        background-color: rgb(196, 255, 196);
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: rgba(0, 0, 0, 0.9);
+        opacity: 0.7;
+        z-index: -1; 
+    }
 }
-/* Make the h2 text look like handwritten with a slight glow */
-h2 {
-    color: #f77621;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    font-size: 2em;
-    text-align: center;
-    margin-top: 30px;
-    opacity: 0.8;
+#projects {
+    body {
+        top: 0;
+        left: 100px;
+        background-color: rgb(196, 233, 255);
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: rgba(0, 0, 0, 0.9);
+        opacity: 0.7;
+        z-index: -1; 
+    }
 }
-.project1 {
-    background-color: #d9fc3d;
-    border-radius: 15px;
-    border: 1px solid #160101e7;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 2000px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.randomChoice {
-    background-color: #99fc3d;
-    border-radius: 15px;
-    border: 1px solid #160101e7;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 2000px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-/* Increase the size of the p1 text to make it stand out */
-p {
-    font-size: 1.15em;
-    color: #050000;
-    text-align: left;
-    margin-top: 20px;
-}    
-/* increase hyperlink size underline */
-a {
-    font-size: 1.2em;
-    color: #3d0bf3;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
-/* make the li elements look like cursive handwriting  */
-li {
-    font-family: 'times new roman', cursive, sans-serif;
-    font-size: 1.1em;
-    color: #0f0000;
-    margin-bottom: 10px;
-}
-/* Give the buttons a nice curved edge and centered text */
-.choice-btn {
-    background-color: #0e61fa;
-    color: #fff;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: 0.3s ease;
-    text-align: center;
-}
-.choice-btn:hover {
-    background-color: #0ce5ec;
-}
-.random_button {
-    background-color: rgb(6, 104, 47);
-    color: #fff;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: 0.3s ease;
-    text-align: center;
-}
-.random_button:hover {
-    opacity: 0.5;
+#contact {
+    body {
+        top: 0;
+        left: 100px;
+        background-color: rgb(255, 196, 196);
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: rgba(0, 0, 0, 0.9);
+        opacity: 0.7;
+        z-index: -1; 
+    }
 }
